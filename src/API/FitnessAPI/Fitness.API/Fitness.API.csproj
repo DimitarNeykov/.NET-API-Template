@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Data\Fitness.Data\Fitness.Data.csproj" />
     <ProjectReference Include="..\..\Common\Services\IdentityServices\IdentityServices.csproj" />
     <ProjectReference Include="..\..\Common\Services\MappingServices\MappingServices.csproj" />

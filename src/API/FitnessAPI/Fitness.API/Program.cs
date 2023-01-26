@@ -105,15 +105,15 @@ using (var serviceScope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(x =>
     {
         x.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
         x.DefaultModelsExpandDepth(-1);
     });
-}
+//}
 
 app.UseHttpsRedirection();
 

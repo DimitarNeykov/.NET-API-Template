@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Data\Fitness.Data\Fitness.Data.csproj" />
-    <ProjectReference Include="..\..\..\..\Fitness.Data\Fitness.Data.csproj" />
     <ProjectReference Include="..\CryptographyServices\CryptographyServices.csproj" />
     <ProjectReference Include="..\MappingServices\MappingServices.csproj" />
   </ItemGroup>
