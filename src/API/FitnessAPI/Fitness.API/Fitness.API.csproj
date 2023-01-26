@@ -7,8 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\Fitness.Data\Fitness.Data.csproj" />
+    <ProjectReference Include="..\..\Common\Services\IdentityServices\IdentityServices.csproj" />
+    <ProjectReference Include="..\..\Common\Services\MappingServices\MappingServices.csproj" />
+    <ProjectReference Include="..\Models\Fitness.InputModels\Fitness.InputModels.csproj" />
+    <ProjectReference Include="..\Models\Fitness.ResponseModels\Fitness.ResponseModels.csproj" />
   </ItemGroup>
 
 </Project>

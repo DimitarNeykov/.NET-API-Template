@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Constants", "Constants", "{17BD3225-9E5F-4783-94FB-92AE71B0E636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingServices", "API\Common\Services\MappingServices\MappingServices.csproj", "{5BA19AD7-CB23-4CB3-9BD7-3E789C60B9E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingServices", "API\Common\Services\MappingServices\MappingServices.csproj", "{5BA19AD7-CB23-4CB3-9BD7-3E789C60B9E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptographyServices", "API\Common\Services\CryptographyServices\CryptographyServices.csproj", "{B32E5977-96F3-4CCD-9C55-9D740F3828BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptographyServices", "API\Common\Services\CryptographyServices\CryptographyServices.csproj", "{B32E5977-96F3-4CCD-9C55-9D740F3828BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServices", "API\Common\Services\IdentityServices\IdentityServices.csproj", "{3D8BE532-8376-438B-97F1-DCDBBBD9ACA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServices", "API\Common\Services\IdentityServices\IdentityServices.csproj", "{3D8BE532-8376-438B-97F1-DCDBBBD9ACA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FitnessAPI", "FitnessAPI", "{DEBDCA6D-A6B6-4E21-B35A-2C1B2DE36CC6}"
 EndProject
@@ -27,9 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{41F486
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{163F7C20-0D3A-4419-9D3C-F5E7C38E6C53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.API", "API\FitnessAPI\Fitness.API\Fitness.API.csproj", "{68067F8C-A907-4CC4-8C51-FD6B64856ED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitness.API", "API\FitnessAPI\Fitness.API\Fitness.API.csproj", "{68067F8C-A907-4CC4-8C51-FD6B64856ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Data", "Fitness.Data\Fitness.Data.csproj", "{D7AF2F96-A024-4A23-B1BA-991A8F322D4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Data", "Data\Fitness.Data\Fitness.Data.csproj", "{D7AF2F96-A024-4A23-B1BA-991A8F322D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.InputModels", "API\FitnessAPI\Models\Fitness.InputModels\Fitness.InputModels.csproj", "{03014AF6-2B10-4B33-981C-2D73BF64B4C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fitness.ResponseModels", "API\FitnessAPI\Models\Fitness.ResponseModels\Fitness.ResponseModels.csproj", "{6A59CC6F-80AA-450A-A68F-42467CA93383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{D7AF2F96-A024-4A23-B1BA-991A8F322D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7AF2F96-A024-4A23-B1BA-991A8F322D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7AF2F96-A024-4A23-B1BA-991A8F322D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03014AF6-2B10-4B33-981C-2D73BF64B4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03014AF6-2B10-4B33-981C-2D73BF64B4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03014AF6-2B10-4B33-981C-2D73BF64B4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03014AF6-2B10-4B33-981C-2D73BF64B4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A59CC6F-80AA-450A-A68F-42467CA93383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A59CC6F-80AA-450A-A68F-42467CA93383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A59CC6F-80AA-450A-A68F-42467CA93383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A59CC6F-80AA-450A-A68F-42467CA93383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +86,8 @@ Global
 		{163F7C20-0D3A-4419-9D3C-F5E7C38E6C53} = {DEBDCA6D-A6B6-4E21-B35A-2C1B2DE36CC6}
 		{68067F8C-A907-4CC4-8C51-FD6B64856ED2} = {DEBDCA6D-A6B6-4E21-B35A-2C1B2DE36CC6}
 		{D7AF2F96-A024-4A23-B1BA-991A8F322D4D} = {66FE4BEF-788B-4501-AB16-81A75692D2F9}
+		{03014AF6-2B10-4B33-981C-2D73BF64B4C9} = {41F48699-5465-45AF-97AC-3A752759822B}
+		{6A59CC6F-80AA-450A-A68F-42467CA93383} = {41F48699-5465-45AF-97AC-3A752759822B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0915322-DD1C-4659-A9A3-779109D579BB}
