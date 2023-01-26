@@ -8,7 +8,7 @@ namespace IdentityServices.Contracts
 
         Task<UserServiceModel?> GetUserByIdAsync(string id);
 
-        Task<bool> RegisterAsync(UserInputServiceModel inputServiceModel);
+        Task<bool> RegisterAsync(RegisterInputServiceModel inputServiceModel);
 
         Task<bool> IsUsernameExistsAsync(string username);
 

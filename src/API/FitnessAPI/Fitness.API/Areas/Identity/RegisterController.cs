@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Fitness.InputModels.Identity.Login;
+using Fitness.InputModels.Identity.Register;
 using Fitness.ResponseModels.Identity.Login;
 using IdentityServices.Contracts;
 using IdentityServices.Models.Authentications;
@@ -20,21 +21,21 @@ namespace Fitness.API.Areas.Identity
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(LoginInputModel inputModel)
+        public async Task<IActionResult> Post(RegisterInputModel inputModel)
         {
             if (await this.usersService.IsUsernameExistsAsync(inputModel.Username))
             {
-                return BadRequest("An usar with that name already exists!");
+                return BadRequest();
             }
 
-            UserInputServiceModel inputServiceModel = inputModel.To<UserInputServiceModel>(this.mapper);
+            RegisterInputServiceModel inputServiceModel = inputModel.To<RegisterInputServiceModel>(this.mapper);
 
             if (!await this.usersService.RegisterAsync(inputServiceModel))
             {
                 return this.NotFound();
             }
 
-            return this.Ok();
+            return this.Created(string.Empty,null);
         }
     }
 }

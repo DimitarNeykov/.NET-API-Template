@@ -23,7 +23,7 @@ namespace Fitness.Data.Models
 
         public string? PhoneNumber { get; set; }
 
-        public string? PhoneNumberConfirmed { get; set; }
+        public bool PhoneNumberConfirmed { get; set; } = false;
 
         public ICollection<Role> Roles { get; set; }
     }

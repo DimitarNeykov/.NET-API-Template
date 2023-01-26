@@ -3,7 +3,7 @@ using MappingServices;
 
 namespace IdentityServices.Models.Users
 {
-    public class UserInputServiceModel : IMapTo<User>
+    public class RegisterInputServiceModel : IMapTo<User>
     {
         public string? Username { get; set; }
 

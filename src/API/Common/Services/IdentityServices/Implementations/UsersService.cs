@@ -63,14 +63,16 @@ namespace IdentityServices.Implementations
 
         public async Task<bool> IsUsernameExistsAsync(string username)
         {
-            return await this.userRepository.AllAsNoTracking().AnyAsync(x => x.Username == username);
+            return await this.userRepository.AllAsNoTracking().AnyAsync(x => x.Username == username.ToLower());
         }
 
-        public async Task<bool> RegisterAsync(UserInputServiceModel inputServiceModel)
+        public async Task<bool> RegisterAsync(RegisterInputServiceModel inputServiceModel)
         {
             string encryptedPassword = this.encryptService.PasswordEncrypt(inputServiceModel.Password.ToString());
 
             User user = inputServiceModel.To<User>(this.mapper);
+            user.Username = user.Username.ToLower();
+            user.Email = user.Email.ToLower();
             user.Password = encryptedPassword;
 
             await this.userRepository.AddAsync(user);
@@ -86,7 +88,7 @@ namespace IdentityServices.Implementations
             User? user = await this.userRepository
                 .AllAsNoTracking()
                 .Include(x=>x.Roles)
-                .FirstOrDefaultAsync(x => x.Username == username && x.Password == encryptedPassword);
+                .FirstOrDefaultAsync(x => x.Username == username.ToLower() && x.Password == encryptedPassword);
 
             if (user == null)
             {
