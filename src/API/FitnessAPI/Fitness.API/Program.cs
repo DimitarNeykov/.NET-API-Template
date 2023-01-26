@@ -57,7 +57,7 @@ builder.Services.AddSingleton(mapper);
 
 #region Db Registration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
 
 builder.Services.AddScoped(typeof(DbRepository<>));
 #endregion
