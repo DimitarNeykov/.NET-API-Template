@@ -13,12 +13,20 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text;
+using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers().AddXmlSerializerFormatters();
+
+builder.Services.AddWatchDogServices(opt =>
+{
+    opt.IsAutoClear = true;
+    opt.ClearTimeSchedule = WatchDog.src.Enums.WatchDogAutoClearScheduleEnum.Monthly;
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x =>
@@ -114,6 +122,7 @@ using (var serviceScope = app.Services.CreateScope())
         x.DefaultModelsExpandDepth(-1);
     });
 //}
+app.UseWatchDogExceptionLogger();
 
 app.UseHttpsRedirection();
 
@@ -121,5 +130,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseWatchDog(opt =>
+{
+    opt.Serializer = WatchDog.src.Enums.WatchDogSerializerEnum.Default;
+    opt.WatchPageUsername = "Admin";
+    opt.WatchPagePassword = "Admin";
+});
 
 app.Run();

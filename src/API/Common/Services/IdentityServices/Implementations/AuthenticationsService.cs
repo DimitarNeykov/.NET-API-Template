@@ -40,7 +40,6 @@ namespace IdentityServices.Implementations
             claims.Add(new Claim(ClaimTypes.Email, this.encryptService.ClaimEncrypt(user.Email)));
             claims.Add(new Claim(ClaimTypes.Name, this.encryptService.ClaimEncrypt(user.FirstName)));
             claims.Add(new Claim(ClaimTypes.Surname, this.encryptService.ClaimEncrypt(user.LastName)));
-            claims.Add(new Claim(ClaimTypes.MobilePhone, this.encryptService.ClaimEncrypt(user.PhoneNumber)));
             claims.Add(new Claim(ClaimTypes.UserData, this.encryptService.ClaimEncrypt(user.Username)));
 
             var tokenkey = Encoding.UTF8.GetBytes(this.configuration["JwtTokenValidation:Secret"]);
@@ -50,7 +49,7 @@ namespace IdentityServices.Implementations
                 Audience = this.configuration["JwtTokenValidation:Audience"],
                 Issuer = this.configuration["JwtTokenValidation:Issuer"],
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddMinutes(60),
+                Expires = DateTime.UtcNow.AddMinutes(120),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenkey), SecurityAlgorithms.HmacSha256)
             };
             var tokenhandler = new JwtSecurityTokenHandler();
